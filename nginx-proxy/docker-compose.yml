@@ -1,4 +1,4 @@
-gitversion: '3'
+version: '3'
 
 services:
   nginx-gen:
