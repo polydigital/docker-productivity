@@ -16,9 +16,7 @@ services:
       - /srv/www/nginx-proxy/certs:/etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro
     environment:
-      - DHPARAM_GENERATION=false
-    labels:
-      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+      DHPARAM_GENERATION: "false"
 
   nginx-letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
