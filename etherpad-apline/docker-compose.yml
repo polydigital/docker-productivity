@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     ports:
       - "443:9001"
-      - "80: 9001"
+      - "80:9001"
     environment:
       - VIRTUAL_HOST=jotter.tombroughton.me
       - LETSENCRYPT_HOST=jotter.tombroughton.me
