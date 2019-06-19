@@ -6,11 +6,11 @@ services:
     container_name: etherpad
     restart: unless-stopped
     ports:
-      - "9001:9001"
+      - "443:9001"
+      - "80: 9001"
     environment:
-      - VIRTUAL_HOST=lymep.tombroughton.me
-      - VIRTUAL_PORT=9001
-      - LETSENCRYPT_HOST=lymep.tombroughton.me
+      - VIRTUAL_HOST=jotter.tombroughton.me
+      - LETSENCRYPT_HOST=jotter.tombroughton.me
       - LETSENCRYPT_EMAIL=hello@tombroughton.me
       - ETHERPAD_ADMIN_PASSWORD='changeme'
 # make sure you change the admin password env
