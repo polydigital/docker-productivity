@@ -14,7 +14,7 @@ services:
       - /srv/www/nginx-proxy/vhost.d:/etc/nginx/vhost.d
       - /srv/www/nginx-proxy/html:/usr/share/nginx/html
       - /srv/www/nginx-proxy/certs:/etc/nginx/certs
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     labels:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
 
