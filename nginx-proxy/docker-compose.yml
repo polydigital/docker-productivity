@@ -1,4 +1,4 @@
-version: '3'
+gitversion: '3'
 
 services:
   nginx-gen:
@@ -15,6 +15,8 @@ services:
       - /srv/www/nginx-proxy/html:/usr/share/nginx/html
       - /srv/www/nginx-proxy/certs:/etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro
+    environment:
+      - DHPARAM_GENERATION=false
     labels:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
 
