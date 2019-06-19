@@ -2,8 +2,6 @@ version: '3'
 
 services:
   etherpad:
-    build:
-      context: .
     image: tabroughton/etherpad-alpine
     container_name: etherpad
     restart: unless-stopped
