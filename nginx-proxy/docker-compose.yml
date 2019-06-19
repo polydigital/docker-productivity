@@ -22,7 +22,12 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: nginx-proxy-letsencrypt
     restart: unless-stopped
-    volumes-from: nginx-proxy
+    volumes:
+      - /srv/www/nginx-proxy/conf.d:/etc/nginx/conf.d
+      - /srv/www/nginx-proxy/vhost.d:/etc/nginx/vhost.d
+      - /srv/www/nginx-proxy/html:/usr/share/nginx/html
+      - /srv/www/nginx-proxy/certs:/etc/nginx/certs
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     environment:
       NGINX_PROXY_CONTAINER: nginx-proxy
       DEFAULT_EMAIL: hello@tombroughton.co.uk
