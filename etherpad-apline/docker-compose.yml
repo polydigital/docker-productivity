@@ -16,8 +16,25 @@ services:
       ETHERPAD_VERSION: master
       NODE_ENV: production
       ETHERPAD_ADMIN_HASH: "$$2a$$10$$GUEbLNTi15BWmj0FmuiQZ.I3U01DISZ6v14zlhfRy5NjkX1htaiqi"
+      MYSQL_USER: etherpaddbuser
+      MYSQL_PORT: 13006
+      MYSQL_PASSWORD: etherpaddb
+      MYSQL_DB: anothersecret
 
-
+  ehterpad-db:
+    image: mariadb:latest
+    container_name: etherpad-db
+    restart: always
+    ports:
+      - "13006:3006"
+    volumes:
+      - /srv/data/etherpad/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: keepthissecret
+      MYSQL_DATABASE: etherpaddb
+      MYSQL_USER: ethepaddbuser
+      MYSQL_PASSWORD: anothersecret
+      
 networks:
   default:
     external:
