@@ -14,7 +14,8 @@ ARG NODE_ENV=development
 RUN apt-get update && \
     apt-get install -y curl \
     	     -yqq \
-	     python-bcrypt
+	     python-bcrypt \
+	     mysql-client
     	    	      
 
 # grab the ETHERPAD_VERSION tarball from github (no need to clone the whole
@@ -49,7 +50,7 @@ EXPOSE 9001
 WORKDIR /opt/etherpad-lite
 
 # make sure we have the dependecy for our hashes
-RUN npm i bcrypt
+RUN npm i bcrypt -save
 # install the hash auth checker
 RUN npm i ep_hash_auth
 

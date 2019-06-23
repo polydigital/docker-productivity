@@ -122,26 +122,27 @@
   "dbSettings" : {
                    "filename" : "var/dirty.db"
 		   },
-   */
-
+  */ 
+  
   /*
    * An Example of MySQL Configuration (commented out).
    *
    * See: https://github.com/ether/etherpad-lite/wiki/How-to-use-Etherpad-Lite-with-MySQL
    */
-
+  
   
   "dbType" : "mysql",
   "dbSettings" : {
                    "user"    : "${MYSQL_USER}",
-                   "host"    : "localhost",
+                   "host"    : "${MYSQL_HOST}",
                    "port"    : "${MYSQL_PORT}",
                    "password": "${MYSQL_PASSWORD}",
-                   "database": "${MYSQL_DB}",
+                   "database": "${MYSQL_DATABASE}",
                    "charset" : "utf8mb4"
                  },
+    
   
-
+    
   /*
    * The default text of a pad
    */
@@ -353,11 +354,6 @@
     "admin": {
       "hash": "${ETHERPAD_ADMIN_HASH}",
       "is_admin": true
-    },
-    "tom": {
-      // "password" can be replaced with "hash" if you install ep_hash_auth
-      "hash": "$2a$10$ArjdrAFD.nARAZijXPbn1.j4cBXHNOpmzxc0v.BJxO5yTBIzV0j96",
-      "is_admin": false
     }
   },
 
@@ -368,7 +364,7 @@
    *   hashes above gen: with
    *     apt-get install -yqq python-bcrypt
    *     python -c 'import bcrypt; print(bcrypt.hashpw(b"password", bcrypt.gensalt(rounds=10, prefix=b"2a")))'
-
+  
    "ep_hash_auth": {
     "hash_typ": "bcrypt",
     "hash_dig": "hex",
