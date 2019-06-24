@@ -75,7 +75,7 @@
    * IP and port which etherpad should bind at
    */
   "ip": "0.0.0.0",
-  "port" : 9001,
+  "port" : "${ETHERPAD_VIRTUAL_PORT:9001}",
 
   /*
    * Option to hide/show the settings.json in admin page.

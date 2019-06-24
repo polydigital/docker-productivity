@@ -23,12 +23,12 @@ services:
     container_name: etherpad
     restart: unless-stopped
     ports:
-      - "9001:9001"
+      - "${ETHERPAD_VIRTUAL_PORT}:${ETHERPAD_VIRTUAL_PORT}"
     environment:
-      VIRTUAL_HOST: jotter.tombroughton.me
-      VIRTUAL_PORT: 9001
-      LETSENCRYPT_HOST: jotter.tombroughton.me
-      LETSENCRYPT_EMAIL: hello@tombroughton.me
+      VIRTUAL_HOST: ${ETHERPAD_VIRTUAL_HOST}
+      VIRTUAL_PORT: ${ETHERPAD_VIRTUAL_PORT}
+      LETSENCRYPT_HOST: ${ETHERPAD_LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${ETHERPAD_LETSENCRYPT_EMAIL}
       ETHERPAD_VERSION: master
       NODE_ENV: production
       ETHERPAD_ADMIN_HASH: "${ETHERPAD_ADMIN_HASH}"
