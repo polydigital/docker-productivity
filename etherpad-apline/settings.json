@@ -364,15 +364,13 @@
    *   hashes above gen: with
    *     apt-get install -yqq python-bcrypt
    *     python -c 'import bcrypt; print(bcrypt.hashpw(b"password", bcrypt.gensalt(rounds=10, prefix=b"2a")))'
-  
+  */
    "ep_hash_auth": {
-    "hash_typ": "bcrypt",
-    "hash_dig": "hex",
     "hash_dir": "/var/etherpad/users",
-    "hash_ext": "/.hash",
+    "hash_ext": ".hash",
     "hash_adm": false
   },
-  */
+  
 
     
   /*
