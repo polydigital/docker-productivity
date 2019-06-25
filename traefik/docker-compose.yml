@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - traefik-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /srv/www/traefik/traefik.toml:/traefik.toml
+      - /srv/www/traefik/acme.json:/acme.json
+    container_name: traefik
+
+networks:
+  traefik-proxy:
+    external: true

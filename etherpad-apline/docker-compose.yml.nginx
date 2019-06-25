@@ -27,6 +27,10 @@ services:
     volumes:
       - /srv/data/etherpad/users:/var/etherpad/users
     environment:
+      VIRTUAL_HOST: ${ETHERPAD_VIRTUAL_HOST}
+      VIRTUAL_PORT: ${ETHERPAD_VIRTUAL_PORT}
+      LETSENCRYPT_HOST: ${ETHERPAD_VIRTUAL_HOST}
+      LETSENCRYPT_EMAIL: ${ETHERPAD_LETSENCRYPT_EMAIL}
       ETHERPAD_VERSION: master
       NODE_ENV: production
       ETHERPAD_ADMIN_HASH: "${ETHERPAD_ADMIN_HASH}"
@@ -35,13 +39,8 @@ services:
       MYSQL_PORT: ${ETHERPAD_MYSQL_PORT}
       MYSQL_USER: ${ETHERPAD_MYSQL_USER}
       MYSQL_PASSWORD: ${ETHERPAD_MYSQL_PASSWORD}
-    labels:
-      - "traefik.docker.network=traefik-proxy"
-      - "traefik.enable=true"
-      - "treafik.frontend.rule=Host.${ETHERPAD_VIRTUAL_HOST}"
-      - "traefik.port=${ETHERPAD_VIRTUAL_PORT}"
       
 networks:
   default:
     external:
-      name: traefik-proxy
+      name: nginx-proxy
