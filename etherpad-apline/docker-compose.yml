@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:  
   etherpad-db:
@@ -8,7 +8,7 @@ services:
     ports:
       - "${ETHERPAD_MYSQL_PORT}:3306"
     volumes:
-      - /srv/data/etherpad/mysql-data:/var/lib/mysql
+      - /srv/data/etherpad/mysql:/var/lib/mysql
     environment:
       MYSQL_DATABASE: ${ETHERPAD_MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${ETHERPAD_MYSQL_ROOT_PASSWORD}
