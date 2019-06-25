@@ -39,7 +39,7 @@ services:
     labels:
       - "traefik.docker.network=traefik-proxy"
       - "traefik.enable=true"
-      - "treafik.frontend.rule=Host.${ETHERPAD_VIRTUAL_HOST}"
+      - "treafik.frontend.rule=Host:${ETHERPAD_VIRTUAL_HOST}"
       - "traefik.port=${ETHERPAD_VIRTUAL_PORT}"
       
 networks:
