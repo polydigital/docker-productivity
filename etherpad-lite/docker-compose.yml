@@ -27,6 +27,7 @@ services:
     volumes:
       - /srv/data/etherpad/users:/var/etherpad/users
     environment:
+      ETHERPAD_VIRTUAL_PORT: ${ETHERPAD_VIRTUAL_PORT}
       ETHERPAD_VERSION: master
       NODE_ENV: production
       ETHERPAD_ADMIN_HASH: "${ETHERPAD_ADMIN_HASH}"
