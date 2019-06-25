@@ -25,7 +25,7 @@ services:
     ports:
       - "${ETHERPAD_VIRTUAL_PORT}:${ETHERPAD_VIRTUAL_PORT}"
     volumes:
-      - /srv/www/etherpad/users:/var/etherpad/users
+      - /srv/data/etherpad/users:/var/etherpad/users
     environment:
       ETHERPAD_VERSION: master
       NODE_ENV: production
