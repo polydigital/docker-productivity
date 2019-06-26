@@ -1,6 +1,6 @@
 debug = false
 
-logLevel = "ERROR"
+logLevel = "DEBUG"
 defaultEntryPoints = ["https","http"]
 
 [entryPoints]
@@ -10,7 +10,7 @@ defaultEntryPoints = ["https","http"]
     entryPoint = "https"
   [entryPoints.https]
   address = ":443"
-  [entryPoints.https.tls]
+    [entryPoints.https.tls]
 
 [retry]
 
@@ -28,5 +28,5 @@ email = "your-email-here@my-awesome-app.org"
 storage = "acme.json"
 entryPoint = "https"
 onHostRule = true
-[acme.httpChallenge]
-entryPoint = "http"
+  [acme.httpChallenge]
+  entryPoint = "http"
