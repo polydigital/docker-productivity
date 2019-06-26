@@ -22,6 +22,7 @@ watch = true
 exposedByDefault = false
 
 [acme]
+caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 # enter an email to be used for lets encrypt
 email = "your-email-here@my-awesome-app.org"
 storage = "acme.json"
