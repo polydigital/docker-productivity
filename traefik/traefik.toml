@@ -10,7 +10,7 @@
 ################################################################
 [global]
   checkNewVersion = true
-  sendAnonymousUsage = true
+#  sendAnonymousUsage = true
 
 ################################################################
 # Entrypoints configuration
@@ -97,28 +97,28 @@ level = "DEBUG"
 ################################################################
 
 # Enable API and dashboard
-[api]
+#[api]
 
   # Name of the related entry point
   #
   # Optional
   # Default: "traefik"
   #
-entryPoint = "traefik"
+#entryPoint = "traefik"
 
   # Enabled Dashboard
   #
   # Optional
   # Default: true
   #
-dashboard = true
+#dashboard = true
 
 ################################################################
 # Ping configuration
 ################################################################
 
 # Enable ping
-[ping]
+#[ping]
 
   # Name of the related entry point
   #
@@ -126,6 +126,8 @@ dashboard = true
   # Default: "traefik"
   #
   # entryPoint = "traefik"
+
+[retry]
 
 ################################################################
 # Docker Provider
@@ -186,7 +188,7 @@ exposedByDefault = false
 # Optional
 # Default: false
 #
-usebindportip = true
+#usebindportip = true
 
 # Use Swarm Mode services as data provider.
 #
@@ -200,7 +202,7 @@ swarmMode = false
 # Optional
 # Default: 15
 #
-swarmModeRefreshSeconds = 15
+#swarmModeRefreshSeconds = 15
 
 # Define a default docker network to use for connections to all containers.
 # Can be overridden by the traefik.docker.network label.
