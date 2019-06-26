@@ -41,7 +41,6 @@ services:
       - "traefik.enable=true"
       - "traefik.backend=etherpad"
       - "treafik.frontend.rule=Host:${ETHERPAD_VIRTUAL_HOST}"
-      - "treafik.protocol=https"
       - "traefik.port=${ETHERPAD_VIRTUAL_PORT}"
       
 networks:
