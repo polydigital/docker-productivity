@@ -40,7 +40,7 @@ services:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
       - "traefik.backend=etherpad"
-      - "treafik.frontend.rule=Host:${ETHERPAD_VIRTUAL_HOST}"
+      - "traefik.frontend.rule=Host:${ETHERPAD_VIRTUAL_HOST}"
       - "traefik.port=${ETHERPAD_VIRTUAL_PORT}"
       
 networks:
