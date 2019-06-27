@@ -37,7 +37,7 @@ services:
       MYSQL_USER: ${ETHERPAD_MYSQL_USER}
       MYSQL_PASSWORD: ${ETHERPAD_MYSQL_PASSWORD}
     labels:
-      - "traefik.docker.network=traefik-proxy"
+      - "traefik.docker.network=web"
       - "traefik.enable=true"
       - "traefik.backend=etherpad"
       - "treafik.frontend.rule=Host:${ETHERPAD_VIRTUAL_HOST}"
