@@ -224,9 +224,10 @@ network = "web"
 
 
 [acme]
+#comment out after testing
 caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
-# enter an email to be used for lets encrypt
-email = "your-email-here@my-awesome-app.org"
+# enter an email to be used for lets encrypt notifications
+#email = "your-email-here@my-awesome-app.org"
 storage = "acme.json"
 entryPoint = "https"
 onHostRule = true
